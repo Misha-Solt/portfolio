@@ -75,7 +75,7 @@ nav svg:hover{
     background-color: rgb(255, 55, 0);
     color: #fff;
     animation-name: fname-rl;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-timing-function: ease;
 }
 .lname{
@@ -91,7 +91,7 @@ nav svg:hover{
     text-transform:uppercase;
     color: #fff;
     animation-name: lname-lr;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-timing-function: ease;
 }
 .speciality{
@@ -108,7 +108,7 @@ nav svg:hover{
     color: #556067;
     animation-name: speciality-rl;
     animation-duration: 1s;
-    animation-delay: 1.5s;
+    animation-delay: 1s;
     opacity: 0;
     animation-fill-mode: forwards;
 }
@@ -125,7 +125,7 @@ nav svg:hover{
     background-color: #fff;
     animation-name: sn-rl;
     animation-duration: 1s;
-    animation-delay: 2s;
+    animation-delay: 1.5s;
     opacity: 0;
     animation-fill-mode: forwards;
 }
