@@ -1,0 +1,174 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+body{
+    height: 100%;
+    display: flex;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+nav{
+    height: 100%;
+    width: 100px;
+    background-color: #222;
+    position: fixed;
+    z-index: 2;
+}
+.portrait{
+    height: 100vh;
+    width: 50%;
+    background-image: url(/img/portrait.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+.main{
+    height: 100vh;
+    width: 50%;
+    background-image: url(/img/main.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav svg{
+    width: 100%;
+    fill: #556067;
+    padding: 30px;
+}
+nav li:first-child svg{
+    background-color: rgb(255, 55, 0);
+    fill:#fff;
+    box-shadow: none;
+}
+nav li:first-child{
+    margin: 0;
+    border: none;
+}
+nav li{
+    margin: 5px 0;
+    border-bottom: 1px solid #556067;
+}
+nav svg:hover{
+    box-shadow: 7px 0px 0px 0px rgb(255, 55, 0);
+    fill: #fff;
+    filter: drop-shadow(0 0 3px lightgray);
+}
+.fname{
+    display: inline-block;
+    position: absolute;
+    right: 50%;
+    top: 5%;
+    width: fit-content;
+    padding: 30px 50px;
+    font-size: 8rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform:uppercase;
+    background-color: rgb(255, 55, 0);
+    color: #fff;
+    animation-name: fname-rl;
+    animation-duration: 1.5s;
+    animation-timing-function: ease;
+}
+.lname{
+    display: inline-block;
+    position: relative;
+    top: 12%;
+    width: fit-content;
+    padding: 30px 50px;
+    font-size: 8rem;
+    background: #222;
+    font-weight: bold;
+    text-align: center;
+    text-transform:uppercase;
+    color: #fff;
+    animation-name: lname-lr;
+    animation-duration: 1.5s;
+    animation-timing-function: ease;
+}
+.speciality{
+    display: inline-block;
+    position: relative;
+    left: 0;
+    top: 26%;
+    width: fit-content;
+    padding: 26px 44px;
+    font-size: 3.5rem;
+    background: #fff;
+    font-weight: bold;
+    text-align: center;
+    color: #556067;
+    animation-name: speciality-rl;
+    animation-duration: 1s;
+    animation-delay: 1.5s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+.and{
+    font-size: 4.5rem;
+    color: rgb(255, 55, 0);
+}
+.sn{
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    width: fit-content;
+    height: 100px;
+    background-color: #fff;
+    animation-name: sn-rl;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+.sn ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.sn svg{
+    height: 100%;
+    fill: #222;
+    padding: 25px;
+}
+.sn li{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-right: #556067 solid 1px;
+}
+.sn svg:hover{
+    fill: rgb(255, 55, 0);
+    padding: 15px;
+    filter: drop-shadow(0 0 3px #556067);
+}
+@keyframes fname-rl {
+    from {opacity: 0.50;}
+    to {opacity: 1;}
+    from {transform:translate(0,-250px)}
+    to {transform:translate(0px,0px)}
+}
+@keyframes lname-lr {
+    from {transform:translate(-450px,0px)}
+    to {transform:translate(0px,0px)}
+}
+@keyframes speciality-rl {
+    from {opacity: 0;}
+    to {opacity: 1;}
+    from {transform:translate(-450px,0px)}
+    to {transform:translate(0px,0px)}
+}
+@keyframes sn-rl {
+    from {opacity: 0;}
+    to {opacity: 1;}
+    from {transform:translate(-450px,0px)}
+    to {transform:translate(0px,0px)}
+}
