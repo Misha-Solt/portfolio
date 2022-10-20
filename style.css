@@ -346,12 +346,11 @@ screen and (max-height: 580px){
         margin-top: 1rem;
     }
     .sn{
-        position: absolute;
+        position:absolute;
+        display: flex;
+        justify-content: center;
         bottom: 0;
-        left: auto;
-        width: 20.6rem;
-        right: 0;
-        background-color: #fff;
+        width: 100%;
         z-index: 1;
         animation-name: sn-mob-du;
         animation-duration: 1s;
@@ -359,7 +358,12 @@ screen and (max-height: 580px){
         opacity: 0;
         animation-fill-mode: forwards;
         animation-timing-function: ease;
-        margin-right: 1rem;
+    }
+    .sn ul{
+        position: absolute;
+        bottom: 0;
+        z-index: 2;
+        background-color: #fff;
     }
     .sn li{
         width: 5rem;
