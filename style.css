@@ -347,7 +347,7 @@ screen and (max-height: 580px){
     }
     .sn{
         position: absolute;
-        bottom: 3%;
+        bottom: 0;
         left: auto;
         width: 20.6rem;
         right: 0;
