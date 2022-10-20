@@ -6,15 +6,20 @@
 }
 body{
     height: 100%;
+    min-width: 320px;
     display: flex;
     font-family: 'Atkinson Hyperlegible', sans-serif;
 }
 nav{
     height: 100%;
-    width: 100px;
+    max-width: 10rem;
     background-color: #222;
     position: fixed;
     z-index: 2;
+}
+main{
+    width: 100%;
+    display: flex;
 }
 .portrait{
     height: 100vh;
@@ -38,79 +43,78 @@ nav ul{
     margin: 0;
     padding: 0;
 }
+nav li{
+    margin: 0.5rem 0;
+    border-bottom: 1px solid #556067;
+}
 nav svg{
     width: 100%;
     fill: #556067;
-    padding: 30px;
+    padding: 3rem;
 }
 nav li:first-child svg{
     background-color: rgb(255, 55, 0);
-    fill:#fff;
     box-shadow: none;
 }
 nav li:first-child{
     margin: 0;
     border: none;
 }
-nav li{
-    margin: 5px 0;
-    border-bottom: 1px solid #556067;
-}
 nav svg:hover{
     box-shadow: 7px 0px 0px 0px rgb(255, 55, 0);
     fill: #fff;
-    filter: drop-shadow(0 0 3px lightgray);
+    filter: drop-shadow(0 0 2px lightgray);
 }
 .fname{
     display: inline-block;
     position: absolute;
     right: 50%;
     top: 5%;
-    width: fit-content;
-    padding: 30px 50px;
+    max-width: 43rem;
+    padding: 3rem 5rem;
     font-size: 8rem;
     font-weight: bold;
-    text-align: center;
     text-transform:uppercase;
     background-color: rgb(255, 55, 0);
     color: #fff;
-    animation-name: fname-rl;
+    animation-name: fname-ud;
     animation-duration: 1s;
     animation-timing-function: ease;
+}
+.lname-mob, .speciality-mob{
+    display: none;
 }
 .lname{
     display: inline-block;
     position: relative;
-    top: 12%;
-    width: fit-content;
-    padding: 30px 50px;
+    top: 10%;
+    padding: 3rem 5rem;
     font-size: 8rem;
     background: #222;
     font-weight: bold;
-    text-align: center;
     text-transform:uppercase;
     color: #fff;
-    animation-name: lname-lr;
+    animation-name: lname-du;
     animation-duration: 1s;
     animation-timing-function: ease;
+    opacity: 0;
+    animation-fill-mode: forwards;
 }
 .speciality{
     display: inline-block;
     position: relative;
-    left: 0;
     top: 26%;
-    width: fit-content;
-    padding: 26px 44px;
+    padding: 3rem 5rem;
     font-size: 3.5rem;
     background: #fff;
     font-weight: bold;
-    text-align: center;
     color: #556067;
     animation-name: speciality-rl;
     animation-duration: 1s;
-    animation-delay: 1s;
+    animation-delay: 0.5s;
     opacity: 0;
     animation-fill-mode: forwards;
+    animation-timing-function: ease;
 }
 .and{
     font-size: 4.5rem;
@@ -120,55 +124,253 @@ nav svg:hover{
     position: absolute;
     bottom: 8%;
     left: 50%;
-    width: fit-content;
-    height: 100px;
     background-color: #fff;
     animation-name: sn-rl;
     animation-duration: 1s;
-    animation-delay: 1.5s;
+    animation-delay: 1s;
     opacity: 0;
     animation-fill-mode: forwards;
+    animation-timing-function: ease;
 }
 .sn ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
-.sn svg{
-    height: 100%;
-    fill: #222;
-    padding: 25px;
-}
 .sn li{
     display: inline-block;
-    width: 100px;
-    height: 100px;
+    width: 10rem;
+    height: 10rem;
     border-right: #556067 solid 1px;
+}
+.sn svg{
+    height: 100%;
+    width: 100%;
+    fill: #222;
+    padding: 3rem;
 }
 .sn svg:hover{
     fill: rgb(255, 55, 0);
-    padding: 15px;
+    padding: 1rem;
     filter: drop-shadow(0 0 3px #556067);
 }
-@keyframes fname-rl {
-    from {opacity: 0.50;}
+@keyframes fname-ud {
+    from {opacity: 0;}
     to {opacity: 1;}
     from {transform:translate(0,-250px)}
     to {transform:translate(0px,0px)}
 }
-@keyframes lname-lr {
-    from {transform:translate(-450px,0px)}
+@keyframes lname-du {
+    from {opacity: 0;}
+    to {opacity: 1;}
+    from {transform:translate(0px,250px)}
     to {transform:translate(0px,0px)}
 }
 @keyframes speciality-rl {
     from {opacity: 0;}
     to {opacity: 1;}
-    from {transform:translate(-450px,0px)}
+    from {transform:translate(-520px,0px)}
+    to {transform:translate(0px,0px)}
+}
+@keyframes speciality-mob-du {
+    from {opacity: 0;}
+    to {opacity: 1;}
+    from {transform:translate(0px,50px)}
     to {transform:translate(0px,0px)}
 }
 @keyframes sn-rl {
     from {opacity: 0;}
     to {opacity: 1;}
-    from {transform:translate(-450px,0px)}
+    from {transform:translate(-400px,0px)}
     to {transform:translate(0px,0px)}
+}
+@keyframes sn-mob-du {
+    from {opacity: 0;}
+    to {opacity: 1;}
+    from {transform:translate(0px,10px)}
+    to {transform:translate(0px,0px)}
+}
+@media screen and (max-width: 1080px),
+screen and (max-height: 700px){
+    .portrait{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+    .main{
+        display: none;
+    }
+    nav{
+        width: 5rem;
+    }
+    nav svg{
+        padding: 3rem 1rem;
+        /* pointer-events: none; */
+    }
+    .fname{
+        position: static;
+        width: fit-content;
+        height: fit-content;
+        font-size: 4rem;
+        margin-top: 3rem;
+    }
+    .lname-mob{
+        display: inline-block;
+        position: static;
+        width: fit-content;
+        height: fit-content;
+        margin-top: 1rem;
+        padding: 3rem 5rem;
+        font-size: 4rem;
+        background: #222;
+        font-weight: bold;
+        text-transform:uppercase;
+        color: #fff;
+        animation-name: lname-du;
+        animation-duration: 1s;
+        animation-timing-function: ease;
+        opacity: 0;
+        animation-fill-mode: forwards;
+    }
+    .speciality-mob{
+        display: inline-block;
+        width: fit-content;
+        height: fit-content;
+        position: static;
+        text-align: center;
+        margin-top: 3rem;
+        padding: 1.5rem 2.5rem;
+        font-size: 2.5rem;
+        background: #fff;
+        font-weight: bold;
+        color: #556067;
+        animation-name: speciality-mob-du;
+        animation-duration: 1s;
+        animation-delay: 0.5s;
+        opacity: 0;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease;
+    }
+    .sn{
+        position: absolute;
+        bottom: 8%;
+        left: auto;
+        width: 40.6rem;
+        right: 0;
+        background-color: #fff;
+        z-index: 1;
+        animation-name: sn-mob-du;
+        animation-duration: 1s;
+        animation-delay: 1s;
+        opacity: 0;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease;
+    }
+    .sn li{
+        width: 10rem;
+        height: 5rem;
+        border-right: #556067 solid 1px;
+    }
+    .sn svg{
+        height: 100%;
+        width: 100%;
+        fill: #222;
+        padding: 1rem 3rem;
+        /* pointer-events: none; */
+    }
+}
+@media screen and (max-width: 460px),
+screen and (max-height: 580px){
+    .portrait{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+    .main{
+        display: none;
+    }
+    nav{
+        width: 5rem;
+    }
+    nav svg{
+        padding: 1rem;
+        /* pointer-events: none; */
+    }
+    .fname{
+        position: static;
+        width: fit-content;
+        height: fit-content;
+        font-size: 3rem;
+        padding: 1rem 2rem;
+        margin-top: 1rem;
+    }
+    .lname-mob{
+        display: inline-block;
+        position: static;
+        width: fit-content;
+        height: fit-content;
+        padding: 1rem 2rem;
+        font-size: 3rem;
+        background: #222;
+        font-weight: bold;
+        text-transform:uppercase;
+        color: #fff;
+        animation-name: lname-du;
+        animation-duration: 1s;
+        animation-timing-function: ease;
+        opacity: 0;
+        animation-fill-mode: forwards;
+        margin-top: 1rem;
+    }
+    .speciality-mob{
+        display: inline-block;
+        width: fit-content;
+        height: fit-content;
+        position: static;
+        text-align: center;
+        padding: 0.5rem 1.5rem;
+        font-size: 2rem;
+        background: #fff;
+        font-weight: bold;
+        color: #556067;
+        animation-name: speciality-mob-du;
+        animation-duration: 1s;
+        animation-delay: 0.5s;
+        opacity: 0;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease;
+        margin-top: 1rem;
+    }
+    .sn{
+        position: absolute;
+        bottom: 3%;
+        left: auto;
+        width: 20.6rem;
+        right: 0;
+        background-color: #fff;
+        z-index: 1;
+        animation-name: sn-mob-du;
+        animation-duration: 1s;
+        animation-delay: 1s;
+        opacity: 0;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease;
+        margin-right: 1rem;
+    }
+    .sn li{
+        width: 5rem;
+        height: 5rem;
+        border-right: #556067 solid 1px;
+    }
+    .sn svg{
+        height: 100%;
+        width: 100%;
+        fill: #222;
+        padding: 1rem;
+        /* pointer-events: none; */
+    }
 }
