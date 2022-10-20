@@ -19,7 +19,7 @@ nav{
 .portrait{
     height: 100vh;
     width: 50%;
-    background-image: url(https://github.com/Misha-Solt/portfolio/blob/main/img/portrait.jpg);
+    background-image: url(https://raw.githubusercontent.com/Misha-Solt/portfolio/main/img/portrait.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -28,7 +28,7 @@ nav{
 .main{
     height: 100vh;
     width: 50%;
-    background-image: url(https://github.com/Misha-Solt/portfolio/blob/main/img/main.jpg);
+    background-image: url(https://raw.githubusercontent.com/Misha-Solt/portfolio/main/img/main.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
