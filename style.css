@@ -191,7 +191,7 @@ nav svg:hover{
     to {transform:translate(0px,0px)}
 }
 @media screen and (max-width: 1080px),
-screen and (max-height: 800px){
+screen and (max-height: 700px){
     .portrait{
         width: 100%;
         display: flex;
@@ -282,7 +282,7 @@ screen and (max-height: 800px){
     }
 }
 @media screen and (max-width: 460px),
-screen and (max-height: 720px){
+screen and (max-height: 580px){
     .portrait{
         width: 100%;
         display: flex;
