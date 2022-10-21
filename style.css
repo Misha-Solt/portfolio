@@ -72,7 +72,7 @@ nav svg:hover{
     top: 5%;
     max-width: 43rem;
     padding: 3rem 5rem;
-    font-size: clamp(3rem, 1rem + 10vw, 8rem);
+    font-size: 8rem;
     font-weight: bold;
     text-transform:uppercase;
     background-color: rgb(255, 55, 0);
@@ -212,6 +212,7 @@ screen and (max-height: 800px){
     .fname{
         position: static;
         margin-top: 3rem;
+        font-size: 4rem;
     }
     .lname-mob{
         display: inline-block;
@@ -221,7 +222,7 @@ screen and (max-height: 800px){
         margin-top: 1rem;
         padding: 3rem 5rem;
         background: #222;
-        font-size: clamp(3rem, 1rem + 10vw,8rem);
+        font-size: 4rem;
         font-weight: bold;
         text-transform:uppercase;
         color: #fff;
@@ -240,7 +241,7 @@ screen and (max-height: 800px){
         margin-top: 3rem;
         padding: 1.5rem 2.5rem;
         background: #fff;
-        font-size: clamp(2rem, 1rem + 10vw, 3.5rem);
+        font-size: 2.5rem;
         font-weight: bold;
         color: #556067;
         animation-name: speciality-mob-du;
@@ -249,6 +250,9 @@ screen and (max-height: 800px){
         opacity: 0;
         animation-fill-mode: forwards;
         animation-timing-function: ease;
+    }
+    .and{
+        font-size: 3.5rem;
     }
     .sn{
         position: absolute;
@@ -298,17 +302,16 @@ screen and (max-height: 720px){
     }
     .fname{
         position: static;
+        font-size: 3rem;
         padding: 1rem 2rem;
         margin-top: 1rem;
     }
     .lname-mob{
         display: inline-block;
         position: static;
-        width: fit-content;
-        height: fit-content;
         padding: 1rem 2rem;
         background: #222;
-        
+        font-size: 3rem;
         font-weight: bold;
         text-transform:uppercase;
         color: #fff;
@@ -327,7 +330,7 @@ screen and (max-height: 720px){
         text-align: center;
         padding: 0.5rem 1.5rem;
         background: #fff;
-        font-size: clamp(2rem, 1rem + 10vw, 3.5rem);
+        font-size: 2rem;
         font-weight: bold;
         color: #556067;
         animation-name: speciality-mob-du;
@@ -337,6 +340,9 @@ screen and (max-height: 720px){
         animation-fill-mode: forwards;
         animation-timing-function: ease;
         margin-top: 1rem;
+    }
+    .and{
+        font-size: 2.5rem;
     }
     .sn{
         position:absolute;
