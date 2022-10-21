@@ -72,7 +72,7 @@ nav svg:hover{
     top: 5%;
     max-width: 43rem;
     padding: 3rem 5rem;
-    font-size: clamp(3rem, 1rem + 10vw,8rem);
+    font-size: clamp(3rem, 1rem + 10vw, 8rem);
     font-weight: bold;
     text-transform:uppercase;
     background-color: rgb(255, 55, 0);
@@ -190,7 +190,8 @@ nav svg:hover{
     from {transform:translate(0px,10px)}
     to {transform:translate(0px,0px)}
 }
-@media screen and (max-width: 1080px){
+@media screen and (max-width: 1080px),
+screen and (max-height: 800px){
     .portrait{
         width: 100%;
         display: flex;
@@ -292,7 +293,7 @@ screen and (max-height: 720px){
         width: 5rem;
     }
     nav svg{
-        padding: 1.2rem;
+        padding: 1rem;
         /* pointer-events: none; */
     }
     .fname{
