@@ -141,7 +141,7 @@ nav svg:hover{
     display: inline-block;
     width: 10rem;
     height: 10rem;
-    border-right: #556067 solid 1px;
+    border-right: #222 solid 1px;
 }
 .sn svg{
     height: 100%;
@@ -191,7 +191,7 @@ nav svg:hover{
     to {transform:translate(0px,0px)}
 }
 @media screen and (max-width: 1080px),
-screen and (max-height: 700px){
+screen and (max-height: 720px){
     .portrait{
         width: 100%;
         display: flex;
@@ -221,7 +221,9 @@ screen and (max-height: 700px){
         width: fit-content;
         height: fit-content;
         margin-top: 1rem;
+        /* make responsive */
         padding: 3rem 5rem;
+/* make responsive */
         background: #222;
         font-size: clamp(3rem, 1rem + 10vw,8rem);
         font-weight: bold;
@@ -270,7 +272,6 @@ screen and (max-height: 700px){
     .sn li{
         width: 10rem;
         height: 5rem;
-        border-right: #556067 solid 1px;
     }
     .sn svg{
         height: 100%;
@@ -366,7 +367,6 @@ screen and (max-height: 580px){
     .sn li{
         width: 5rem;
         height: 5rem;
-        border-right: #556067 solid 1px;
     }
     .sn svg{
         height: 100%;
