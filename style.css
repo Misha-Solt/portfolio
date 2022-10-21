@@ -190,8 +190,7 @@ nav svg:hover{
     from {transform:translate(0px,10px)}
     to {transform:translate(0px,0px)}
 }
-@media screen and (max-width: 1080px),
-screen and (max-height: 720px){
+@media screen and (max-width: 1080px){
     .portrait{
         width: 100%;
         display: flex;
@@ -211,8 +210,6 @@ screen and (max-height: 720px){
     }
     .fname{
         position: static;
-        width: fit-content;
-        height: fit-content;
         margin-top: 3rem;
     }
     .lname-mob{
@@ -221,9 +218,7 @@ screen and (max-height: 720px){
         width: fit-content;
         height: fit-content;
         margin-top: 1rem;
-        /* make responsive */
         padding: 3rem 5rem;
-/* make responsive */
         background: #222;
         font-size: clamp(3rem, 1rem + 10vw,8rem);
         font-weight: bold;
@@ -282,7 +277,7 @@ screen and (max-height: 720px){
     }
 }
 @media screen and (max-width: 460px),
-screen and (max-height: 580px){
+screen and (max-height: 720px){
     .portrait{
         width: 100%;
         display: flex;
@@ -297,13 +292,11 @@ screen and (max-height: 580px){
         width: 5rem;
     }
     nav svg{
-        padding: 1rem;
+        padding: 1.2rem;
         /* pointer-events: none; */
     }
     .fname{
         position: static;
-        width: fit-content;
-        height: fit-content;
         padding: 1rem 2rem;
         margin-top: 1rem;
     }
