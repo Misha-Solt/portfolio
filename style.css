@@ -155,7 +155,7 @@ nav .item:hover svg{
     position: relative;
     display: inline-block;
     text-decoration: none;
-    font-size: clamp(2rem, 1rem + 10vw,6rem);
+    font-size: clamp(0.5rem, 1rem + 10vh,6rem);
     font-weight: 400;
     color: #556067;
     transition: all 0.3s ease;
