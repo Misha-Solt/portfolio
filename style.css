@@ -10,17 +10,195 @@ body{
     display: flex;
     font-family: 'Atkinson Hyperlegible', sans-serif;
 }
+main{
+    width: 100%;
+    display: flex;
+}
+
+
+/* fast menu */
 nav{
     height: 100%;
     max-width: 10rem;
     background-color: #222;
     position: fixed;
-    z-index: 2;
+    z-index: 3;
 }
-main{
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav li{
+    margin: 0.5rem 0;
+    border-bottom: 1px solid #556067;
+}
+nav svg{
     width: 100%;
-    display: flex;
+    height: 100%;
+    fill: #556067;
+    padding: 3rem;
 }
+nav li:first-child{
+    margin: 0;
+    width: 10rem;
+    height: 10rem;
+    background-color: #f23c05;
+}
+nav a{
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+nav .item::after{
+    position: absolute;
+    content: "";
+    left: 103%;
+    top: 10%;
+    width: 0.5rem;
+    height: 80%;
+    background: #f23c05;
+    border-radius: 5px;
+    filter: drop-shadow(0 0 3px #222);
+    transform: scaleY(0);
+    transform-origin:center ;
+    transition: transform 0.5s;
+}
+nav .item:hover::after {
+    transform: scaleY(1);
+    transform-origin: center;
+}
+nav .item:hover svg{
+    fill: #fff;
+    filter: drop-shadow(0 0 1px #fff );
+}
+/* fast menu end*/
+
+
+/* main menu */
+.menu-btn{
+    position: absolute;
+    z-index: 5;
+    left: 2.5rem;
+    top: 2.5rem;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.menu-btn span,
+.menu-btn:before,
+.menu-btn:after{
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 18%;
+    width: 64%;
+    border-bottom: 4px solid #556067;
+    transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.menu-btn:before{
+    transform: translateY(-10px);
+}
+.menu-btn:after{
+    transform: translateY(10px);
+}
+.close {
+    z-index: 6;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transition: background .6s;
+}
+
+/* closing animation */
+
+#active:checked + .menu-btn span {
+    transform: scaleX(0);
+}
+#active:checked + .menu-btn:before {
+    transform: rotate(45deg);
+    border-color: #fff;
+}
+#active:checked + .menu-btn:after {
+    transform: rotate(-45deg);
+    border-color: #fff;
+}
+
+/* closing animation end*/
+
+
+.wrapper{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    background: #222;
+    transition: all 0.6s ease-in-out;
+    z-index: 4;
+}
+#active:checked ~ .wrapper{
+    left: 0;
+}
+.wrapper ul{
+    position: relative;
+    list-style: none;
+    text-align: center;
+}
+.wrapper li{
+    margin-top: 1rem;
+}
+.wrapper ul li a{
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    font-size: clamp(2rem, 1rem + 10vw,6rem);
+    font-weight: 400;
+    color: #556067;
+    transition: all 0.3s ease;
+    transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+    opacity: 0;
+}
+.wrapper ul li a:after{
+    
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 5%;
+    height: 0.5rem;
+    width: 90%;
+    background: #f23c05;
+    border-radius: 5px;
+    filter: drop-shadow(0 0 3px #556067);
+    transform: scaleX(0);
+    transform-origin:center ;
+    transition: transform 0.5s;
+}
+.wrapper ul li a:hover:after{
+    transform: scaleX(1);
+}
+.wrapper ul li a:hover{
+    color: #fff;
+}
+input[type="checkbox"]{
+    display: none;
+}
+#active:checked ~ .wrapper ul li a{
+    opacity: 1;
+    transition-delay: .6s;
+}
+.wrapper ul li a{
+    transition: opacity 1.2s, transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+/* main menu end */
+
+/* main screen */
 .portrait{
     height: 100vh;
     width: 50%;
@@ -38,33 +216,6 @@ main{
     background-repeat: no-repeat;
     background-size: cover;
 }
-nav ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-nav li{
-    margin: 0.5rem 0;
-    border-bottom: 1px solid #556067;
-}
-nav svg{
-    width: 100%;
-    fill: #556067;
-    padding: 3rem;
-}
-nav li:first-child svg{
-    background-color: rgb(255, 55, 0);
-    box-shadow: none;
-}
-nav li:first-child{
-    margin: 0;
-    border: none;
-}
-nav svg:hover{
-    box-shadow: 7px 0px 0px 0px rgb(255, 55, 0);
-    fill: #fff;
-    filter: drop-shadow(0 0 2px lightgray);
-}
 .fname{
     display: inline-block;
     position: absolute;
@@ -75,7 +226,7 @@ nav svg:hover{
     font-size: 8rem;
     font-weight: bold;
     text-transform:uppercase;
-    background-color: rgb(255, 55, 0);
+    background-color: #f23c05;
     color: #fff;
     animation-name: fname-ud;
     animation-duration: 1s;
@@ -118,41 +269,7 @@ nav svg:hover{
 }
 .and{
     font-size: 4.5rem;
-    color: rgb(255, 55, 0);
-}
-.sn{
-    position: absolute;
-    bottom: 8%;
-    left: 50%;
-    background-color: #fff;
-    animation-name: sn-rl;
-    animation-duration: 1s;
-    animation-delay: 1s;
-    opacity: 0;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease;
-}
-.sn ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-.sn li{
-    display: inline-block;
-    width: 10rem;
-    height: 10rem;
-    border-right: #222 solid 1px;
-}
-.sn svg{
-    height: 100%;
-    width: 100%;
-    fill: #222;
-    padding: 3rem;
-}
-.sn svg:hover{
-    fill: rgb(255, 55, 0);
-    padding: 1rem;
-    filter: drop-shadow(0 0 3px #556067);
+    color: #f23c05;
 }
 @keyframes fname-ud {
     from {opacity: 0;}
@@ -190,8 +307,57 @@ nav svg:hover{
     from {transform:translate(0px,10px)}
     to {transform:translate(0px,0px)}
 }
+/* main screen end*/
+
+
+/* social net. menu */
+.sn{
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    background-color: #fff;
+    animation-name: sn-rl;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+.sn ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.sn li{
+    display: inline-block;
+    width: 10rem;
+    height: 10rem;
+    border-right: #222 solid 1px;
+}
+.sn svg{
+    height: 100%;
+    width: 100%;
+    fill: #222;
+    padding: 3rem;
+}
+.sn svg:hover{
+    fill: #f23c05;
+    padding: 1rem;
+    filter: drop-shadow(0 0 3px #556067);
+}
+/* social net. menu end */
+
+
+/* responsive design */
 @media screen and (max-width: 1080px),
 screen and (max-height: 700px){
+    .menu-btn{
+        left: 1.25rem;
+        width: 25px;
+    }
+    nav li:first-child{
+        width: 5rem;
+    }    
     .portrait{
         width: 100%;
         display: flex;
@@ -281,6 +447,8 @@ screen and (max-height: 700px){
         /* pointer-events: none; */
     }
 }
+
+
 @media screen and (max-width: 460px),
 screen and (max-height: 580px){
     .portrait{
@@ -300,6 +468,16 @@ screen and (max-height: 580px){
         padding: 1rem;
         /* pointer-events: none; */
     }
+    nav li:first-child{
+        width: 5rem;
+        height: 5rem;
+    }
+    .menu-btn{
+        left: 1.25rem;
+        width: 25px;
+        top: 1.25rem;
+        height: 25px;
+    }   
     .fname{
         position: static;
         font-size: 3rem;
@@ -376,3 +554,4 @@ screen and (max-height: 580px){
         /* pointer-events: none; */
     }
 }
+/* responsive design end */
