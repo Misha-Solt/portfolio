@@ -5,7 +5,7 @@
 
 ## Demo
 
-(misha-solt.github.io/portfolio/)
+misha-solt.github.io/portfolio/
 
 This is just the beginning and I've learned just a little bit HTML and CSS.
 :rocket: Further is more.:rocket:
